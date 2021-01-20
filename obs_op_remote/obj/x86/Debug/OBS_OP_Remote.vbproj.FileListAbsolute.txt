@@ -1,0 +1,16 @@
+C:\Users\Boardroom\Documents\GitHub\obs_op_remote\obs_op_remote\bin\Debug\AtemController.exe
+C:\Users\Boardroom\Documents\GitHub\obs_op_remote\obs_op_remote\bin\Debug\AtemController.pdb
+C:\Users\Boardroom\Documents\GitHub\obs_op_remote\obs_op_remote\bin\Debug\AtemController.xml
+C:\Users\Boardroom\Documents\GitHub\obs_op_remote\obs_op_remote\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+C:\Users\Boardroom\Documents\GitHub\obs_op_remote\obs_op_remote\bin\Debug\WebSocket4Net.dll
+C:\Users\Boardroom\Documents\GitHub\obs_op_remote\obs_op_remote\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+C:\Users\Boardroom\Documents\GitHub\obs_op_remote\obs_op_remote\obj\x86\Debug\OBS_OP_Remote.vbprojResolveAssemblyReference.cache
+C:\Users\Boardroom\Documents\GitHub\obs_op_remote\obs_op_remote\obj\x86\Debug\AtemController.MainForm.resources
+C:\Users\Boardroom\Documents\GitHub\obs_op_remote\obs_op_remote\obj\x86\Debug\AtemController.Form2.resources
+C:\Users\Boardroom\Documents\GitHub\obs_op_remote\obs_op_remote\obj\x86\Debug\AtemController.Form3.resources
+C:\Users\Boardroom\Documents\GitHub\obs_op_remote\obs_op_remote\obj\x86\Debug\AtemController.Form4.resources
+C:\Users\Boardroom\Documents\GitHub\obs_op_remote\obs_op_remote\obj\x86\Debug\AtemController.Resources.resources
+C:\Users\Boardroom\Documents\GitHub\obs_op_remote\obs_op_remote\obj\x86\Debug\OBS_OP_Remote.vbproj.GenerateResource.Cache
+C:\Users\Boardroom\Documents\GitHub\obs_op_remote\obs_op_remote\obj\x86\Debug\AtemController.exe
+C:\Users\Boardroom\Documents\GitHub\obs_op_remote\obs_op_remote\obj\x86\Debug\AtemController.xml
+C:\Users\Boardroom\Documents\GitHub\obs_op_remote\obs_op_remote\obj\x86\Debug\AtemController.pdb
