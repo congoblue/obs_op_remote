@@ -412,16 +412,16 @@ Public Class MainForm
         Dim op As String
 
         'If ((Not TextLeaderName.Focus) And (Not TextPreacherName.Focus)) Then
-        If False Then 'temporarily disable hotkeys
+        If True Then 'temporarily disable hotkeys
 
             If e.KeyCode = 49 Then BtnCam1_Click(BtnCam1, Nothing)
             If e.KeyCode = 50 Then BtnCam1_Click(BtnCam2, Nothing)
             If e.KeyCode = 51 Then BtnCam1_Click(BtnCam3, Nothing)
             If e.KeyCode = 52 Then BtnCam1_Click(BtnCam4, Nothing)
-            If e.KeyCode = 53 Then BtnInp_Click(BtnInp1, Nothing)
-            If e.KeyCode = 54 Then BtnInp_Click(BtnInp2, Nothing)
-            If e.KeyCode = 55 Then BtnInp_Click(BtnInp3, Nothing)
-            If e.KeyCode = 56 Then BtnInp_Click(BtnInp4, Nothing)
+            If e.KeyCode = 55 Then BtnInp_Click(BtnInp1, Nothing)
+            If e.KeyCode = 53 Then BtnInp_Click(BtnInp2, Nothing)
+            If e.KeyCode = 56 Then BtnInp_Click(BtnInp3, Nothing)
+            If e.KeyCode = 54 Then BtnInp_Click(BtnInp4, Nothing)
             If e.KeyCode = Keys.Q Then BtnPreset_Click(BtnPreset1, Nothing)
             If e.KeyCode = Keys.W Then BtnPreset_Click(BtnPreset2, Nothing)
             If e.KeyCode = Keys.E Then BtnPreset_Click(BtnPreset3, Nothing)
@@ -2548,6 +2548,7 @@ Public Class MainForm
             Timer1.Enabled = True
         End If
         If (startuptimer = 10) Then 'connect to atem
+            Timer1.Enabled = False
             websocket.Send("{""request-type"":""SetCurrentScene"",""scene-name"":""Cam1"",""message-id"":""TEST1""}")
             'websocket.Send("{""request-type"":""SetPreviewScene"",""scene-name"":""Cam2"",""message-id"":""TEST1""}")
             'setactive()
@@ -2561,9 +2562,11 @@ Public Class MainForm
             '        GroupBox1.Refresh()
             '        Timer1.Enabled = True
             ReadMediaSources()
+            Timer1.Enabled = True
         End If
         If (startuptimer = 15) Then
             Timer1.Enabled = False
+            WebsocketSendAndWait("{""request-type"":""SetPreviewScene"",""scene-name"":""Cam2"",""message-id"":""TEST1""}")
             'If atemconnect = False Then CamIgnore(1) = True : CamIgnore(2) = True : CamIgnore(3) = True : CamIgnore(4) = True 'if atem connect fails, don't try to connect cameras
             For ta = 1 To 4
                 SendCamCmdAddr(ta, "O1") 'power on command
