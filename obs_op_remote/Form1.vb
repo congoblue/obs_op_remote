@@ -34,6 +34,7 @@ Public Class MainForm
     Dim VISMacrosConnection As New System.Net.Sockets.TcpClient()
     Dim ServerNetworkStream As NetworkStream
     Dim websocket As WebSocket4Net.WebSocket
+    Dim WebsocketTimeoutTimer As Integer
     Dim OBSResponse As String
     Dim OBSRecState As Boolean
     Dim OBSStreamState As Boolean
@@ -179,10 +180,12 @@ Public Class MainForm
     Private Sub WebsocketSendAndWait(ByVal msg As String)
         msg = Replace(msg, "TEST1", "WS" & WebsocketID)
         Websocketwait = True
+        WebsocketTimeoutTimer = 10
         websocket.Send(msg)
-        While Websocketwait
+        While Websocketwait And WebsocketTimeoutTimer > 0
             Application.DoEvents()
         End While
+        If WebsocketTimeoutTimer = 0 Then MessageBox.Show("No response from OBS", "OBSCamControl")
     End Sub
 
     Private Sub ReadMediaSources()
@@ -282,7 +285,7 @@ Public Class MainForm
         Catch ex As System.Net.WebException
             CamIgnore(addr) = True
             If addr = 7 Then addr = 5 'cam7 is shown as 5 on the panel
-            MsgBox("Error sending to camera " & addr & vbCrLf & ex.Message)
+            MessageBox.Show("Error sending to camera " & addr & vbCrLf & ex.Message, "OBSCamControl")
         End Try
         'CamCmdPending = False
         Return result
@@ -307,7 +310,7 @@ Public Class MainForm
         Catch ex As System.Net.WebException
             CamIgnore(addr) = True
             If addr = 7 Then addr = 5 'cam7 is shown as 5 on the panel
-            MsgBox("Error sending to camera " & addr & vbCrLf & ex.Message)
+            MessageBox.Show("Error sending to camera " & addr & vbCrLf & ex.Message, "OBSCamControl")
         End Try
         'CamCmdPending = False
         Return result
@@ -331,7 +334,7 @@ Public Class MainForm
         Catch ex As System.Net.WebException
             CamIgnore(caddr) = True
             If caddr = 7 Then caddr = 5 'cam7 is shown as 5 on the panel
-            MsgBox("Error sending to camera " & caddr & vbCrLf & ex.Message)
+            MessageBox.Show("Error sending to camera " & caddr & vbCrLf & ex.Message, "OBSCamControl")
         End Try
         'CamCmdPending = False
         Return result
@@ -356,7 +359,7 @@ Public Class MainForm
         Catch ex As System.Net.WebException
             CamIgnore(caddr) = True
             If caddr = 7 Then caddr = 5 'cam7 is shown as 5 on the panel
-            MsgBox("Error sending to camera " & caddr & vbCrLf & ex.Message)
+            MessageBox.Show("Error sending to camera " & caddr & vbCrLf & ex.Message, "OBSCamControl")
         End Try
         'CamCmdPending = False
         Return result
@@ -380,7 +383,7 @@ Public Class MainForm
         Catch ex As System.Net.WebException
             CamIgnore(caddr) = True
             If caddr = 7 Then caddr = 5 'cam7 is shown as 5 on the panel
-            MsgBox("Error sending to camera " & caddr & vbCrLf & ex.Message)
+            MessageBox.Show("Error sending to camera " & caddr & vbCrLf & ex.Message, "OBSCamControl")
         End Try
         'CamCmdPending = False
         Return result
@@ -1250,7 +1253,7 @@ Public Class MainForm
         End If
     End Sub
 
-    Private Sub BtnStop_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnStop.Click
+    Private Sub BtnStop_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         SendCamCmdAddr(1, "PTS5050")
         SendCamCmdAddr(1, "Z50")
         SendCamCmdAddr(2, "PTS5050")
@@ -2529,7 +2532,7 @@ Public Class MainForm
                 End If
             End If
             GroupBox1.Show()
-            GroupBox1.Left = 100 : GroupBox1.Top = 20
+            GroupBox1.Left = 100 : GroupBox1.Top = 10
             If ctrlkey Then Label22.Text = "EMERGENCY STARTUP MODE" & vbCrLf Else Label22.Text = ""
             Label22.Text = Label22.Text & "Profile: " & Globals.PresetFileName & vbCrLf
             'Label22.Text = Label22.Text & "Opening com port..."
@@ -2714,6 +2717,7 @@ Public Class MainForm
             WebsocketReinitTimer = WebsocketReinitTimer - 1
         End If
 
+
         'timer to check for double presses of cut and fade, and also check that the live/prev cams match what we think they are
         If CutLockoutTimer > 0 Then
             CutLockoutTimer = CutLockoutTimer - 1
@@ -2889,7 +2893,7 @@ Public Class MainForm
         If (ShutDownTimer = 2) And GetSetting("Atemswitcher", "Set", "CamStandby", True) = True Then 'put cams into standby
             Timer1.Enabled = False
             GroupBox1.Show()
-            GroupBox1.Left = 100 : GroupBox1.Top = 20
+            GroupBox1.Left = 100 : GroupBox1.Top = 10
             Label22.Text = "Closing down cameras..." & vbCrLf
             SendCamCmdAddr(1, "O0")
             SendCamCmdAddr(2, "O0")
@@ -2949,6 +2953,10 @@ Public Class MainForm
         If CamRec(2) Or CamRecStatusTimer = 60 Then TextBoxCam2Rec.Text = CamRecStatus(SendCamQuery(2, "get_state"), 2)
         If CamRec(3) Or CamRecStatusTimer = 60 Then TextBoxCam3Rec.Text = CamRecStatus(SendCamQuery(3, "get_state"), 3)
         If CamRec(4) Or CamRecStatusTimer = 60 Then TextBoxCam4Rec.Text = CamRecStatus(SendCamQuery(4, "get_state"), 4)
+
+        If WebsocketTimeoutTimer > 0 Then
+            WebsocketTimeoutTimer = WebsocketTimeoutTimer - 1
+        End If
 
 
     End Sub

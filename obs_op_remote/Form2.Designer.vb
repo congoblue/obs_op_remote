@@ -103,6 +103,7 @@ Partial Class Form2
         Me.Label2.Size = New System.Drawing.Size(119, 13)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "PTZ Controller com port"
+        Me.Label2.Visible = False
         '
         'ComboBox2
         '
@@ -111,6 +112,7 @@ Partial Class Form2
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(164, 21)
         Me.ComboBox2.TabIndex = 3
+        Me.ComboBox2.Visible = False
         '
         'CheckBoxInvert4
         '
@@ -387,6 +389,7 @@ Partial Class Form2
         Me.Button4.TabIndex = 170
         Me.Button4.Text = "menu"
         Me.Button4.UseVisualStyleBackColor = True
+        Me.Button4.Visible = False
         '
         'Button6
         '
@@ -396,6 +399,7 @@ Partial Class Form2
         Me.Button6.TabIndex = 172
         Me.Button6.Text = "up"
         Me.Button6.UseVisualStyleBackColor = True
+        Me.Button6.Visible = False
         '
         'Button7
         '
@@ -405,6 +409,7 @@ Partial Class Form2
         Me.Button7.TabIndex = 173
         Me.Button7.Text = "down"
         Me.Button7.UseVisualStyleBackColor = True
+        Me.Button7.Visible = False
         '
         'Button8
         '
@@ -414,6 +419,7 @@ Partial Class Form2
         Me.Button8.TabIndex = 171
         Me.Button8.Text = "enter"
         Me.Button8.UseVisualStyleBackColor = True
+        Me.Button8.Visible = False
         '
         'Button5
         '
@@ -423,6 +429,7 @@ Partial Class Form2
         Me.Button5.TabIndex = 174
         Me.Button5.Text = "osd"
         Me.Button5.UseVisualStyleBackColor = True
+        Me.Button5.Visible = False
         '
         'CheckBoxCam5Dis
         '
@@ -443,6 +450,7 @@ Partial Class Form2
         Me.TextBox8.Name = "TextBox8"
         Me.TextBox8.Size = New System.Drawing.Size(62, 20)
         Me.TextBox8.TabIndex = 175
+        Me.TextBox8.Visible = False
         '
         'Label15
         '
@@ -452,6 +460,7 @@ Partial Class Form2
         Me.Label15.Size = New System.Drawing.Size(86, 13)
         Me.Label15.TabIndex = 176
         Me.Label15.Text = "Am intro clip time"
+        Me.Label15.Visible = False
         '
         'Label16
         '
@@ -461,6 +470,7 @@ Partial Class Form2
         Me.Label16.Size = New System.Drawing.Size(85, 13)
         Me.Label16.TabIndex = 178
         Me.Label16.Text = "pm intro clip time"
+        Me.Label16.Visible = False
         '
         'TextBox9
         '
@@ -468,6 +478,7 @@ Partial Class Form2
         Me.TextBox9.Name = "TextBox9"
         Me.TextBox9.Size = New System.Drawing.Size(60, 20)
         Me.TextBox9.TabIndex = 177
+        Me.TextBox9.Visible = False
         '
         'Label17
         '
@@ -477,6 +488,7 @@ Partial Class Form2
         Me.Label17.Size = New System.Drawing.Size(71, 13)
         Me.Label17.TabIndex = 180
         Me.Label17.Text = "ident clip time"
+        Me.Label17.Visible = False
         '
         'TextBox10
         '
@@ -484,6 +496,7 @@ Partial Class Form2
         Me.TextBox10.Name = "TextBox10"
         Me.TextBox10.Size = New System.Drawing.Size(60, 20)
         Me.TextBox10.TabIndex = 179
+        Me.TextBox10.Visible = False
         '
         'Label18
         '
@@ -493,6 +506,7 @@ Partial Class Form2
         Me.Label18.Size = New System.Drawing.Size(72, 13)
         Me.Label18.TabIndex = 182
         Me.Label18.Text = "Loop clip time"
+        Me.Label18.Visible = False
         '
         'TextBox11
         '
@@ -500,6 +514,7 @@ Partial Class Form2
         Me.TextBox11.Name = "TextBox11"
         Me.TextBox11.Size = New System.Drawing.Size(60, 20)
         Me.TextBox11.TabIndex = 181
+        Me.TextBox11.Visible = False
         '
         'Label19
         '
@@ -575,7 +590,7 @@ Partial Class Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(534, 435)
+        Me.ClientSize = New System.Drawing.Size(534, 370)
         Me.Controls.Add(Me.CheckBoxCam4Dis)
         Me.Controls.Add(Me.CheckBoxCam3Dis)
         Me.Controls.Add(Me.CheckBoxCam2Dis)

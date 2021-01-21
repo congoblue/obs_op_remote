@@ -13,3 +13,4 @@ C:\Users\Boardroom\Documents\GitHub\obs_op_remote\obs_op_remote\obj\x86\Debug\OB
 C:\Users\Boardroom\Documents\GitHub\obs_op_remote\obs_op_remote\obj\x86\Debug\AtemController.exe
 C:\Users\Boardroom\Documents\GitHub\obs_op_remote\obs_op_remote\obj\x86\Debug\AtemController.xml
 C:\Users\Boardroom\Documents\GitHub\obs_op_remote\obs_op_remote\obj\x86\Debug\AtemController.pdb
+C:\Users\Boardroom\Documents\GitHub\obs_op_remote\obs_op_remote\obj\x86\Debug\OBS_OP_Remote.vbprojResolveAssemblyReference.cache

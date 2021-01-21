@@ -4,7 +4,7 @@ Public Class Form2
 
     Private Sub Form2_Disposed(sender As Object, e As System.EventArgs) Handles Me.Disposed
 
-        MainForm.ComportOpen()
+        'MainForm.ComportOpen()
     End Sub
 
     Private Sub Form2_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
