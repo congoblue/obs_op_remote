@@ -404,10 +404,10 @@ Public Class MainForm
         If _serialPort.IsOpen Then _serialPort.Close()
         If SerialPort1.IsOpen Then SerialPort1.Close()
         'BackgroundWorker1.CancelAsync()
-        SaveSetting("Atemswitcher", "Form", "Top", Me.Top)
-        SaveSetting("Atemswitcher", "Form", "Left", Me.Left)
-        SaveSetting("Atemswitcher", "Form", "Width", Me.Width)
-        SaveSetting("Atemswitcher", "Form", "Height", Me.Height)
+        SaveSetting("OBS_OP_Remote", "Form", "Top", Me.Top)
+        SaveSetting("OBS_OP_Remote", "Form", "Left", Me.Left)
+        SaveSetting("OBS_OP_Remote", "Form", "Width", Me.Width)
+        SaveSetting("OBS_OP_Remote", "Form", "Height", Me.Height)
     End Sub
 
     Private Sub MainForm_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
@@ -505,10 +505,10 @@ Public Class MainForm
 
         Me.FormBorderStyle = FormBorderStyle.Sizable 'if no 2nd monitor, open sizeable on main monitor
 
-        Me.Top = GetSetting("Atemswitcher", "Form", "Top", 0)
-        Me.Left = GetSetting("Atemswitcher", "Form", "Left", 0)
-        Me.Width = GetSetting("Atemswitcher", "Form", "Width", 800)
-        Me.Height = GetSetting("Atemswitcher", "Form", "Height", 600)
+        Me.Top = GetSetting("OBS_OP_Remote", "Form", "Top", 0)
+        Me.Left = GetSetting("OBS_OP_Remote", "Form", "Left", 0)
+        Me.Width = GetSetting("OBS_OP_Remote", "Form", "Width", 800)
+        Me.Height = GetSetting("OBS_OP_Remote", "Form", "Height", 600)
 
         OpenWebSocket()
 
@@ -531,34 +531,34 @@ Public Class MainForm
         'Debug.Print(joyconvert(i) & ",")
         'Next
 
-        Globals.TallyMode = GetSetting("Atemswitcher", "Set", "Tally", False)
-        Globals.AutoSwap = GetSetting("Atemswitcher", "Set", "Autoswap", True)
-        Globals.PresetFilePath = GetSetting("Atemswitcher", "Set", "PresetsPath", Mid(Application.ExecutablePath, 1, InStrRev(Application.ExecutablePath, "\")))
+        Globals.TallyMode = GetSetting("OBS_OP_Remote", "Set", "Tally", False)
+        Globals.AutoSwap = GetSetting("OBS_OP_Remote", "Set", "Autoswap", True)
+        Globals.PresetFilePath = GetSetting("OBS_OP_Remote", "Set", "PresetsPath", Mid(Application.ExecutablePath, 1, InStrRev(Application.ExecutablePath, "\")))
         If Globals.PresetFilePath = "" Then Globals.PresetFilePath = Mid(Application.ExecutablePath, 1, InStrRev(Application.ExecutablePath, "\"))
-        Globals.PresetFileName = GetSetting("Atemswitcher", "Set", "PresetsFile", "default.aps")
+        Globals.PresetFileName = GetSetting("OBS_OP_Remote", "Set", "PresetsFile", "default.aps")
         If InStr(Globals.PresetFileName, "\") Then Globals.PresetFileName = Mid(Globals.PresetFileName, InStrRev(Globals.PresetFileName, "\") + 1)
         If Globals.PresetFileName = "" Then Globals.PresetFileName = "default.aps"
-        Globals.CamInvert(1) = GetSetting("Atemswitcher", "Set", "Caminvert1", False)
-        Globals.CamInvert(2) = GetSetting("Atemswitcher", "Set", "Caminvert2", False)
-        Globals.CamInvert(3) = GetSetting("Atemswitcher", "Set", "Caminvert3", False)
-        Globals.CamInvert(4) = GetSetting("Atemswitcher", "Set", "Caminvert4", False)
+        Globals.CamInvert(1) = GetSetting("OBS_OP_Remote", "Set", "Caminvert1", False)
+        Globals.CamInvert(2) = GetSetting("OBS_OP_Remote", "Set", "Caminvert2", False)
+        Globals.CamInvert(3) = GetSetting("OBS_OP_Remote", "Set", "Caminvert3", False)
+        Globals.CamInvert(4) = GetSetting("OBS_OP_Remote", "Set", "Caminvert4", False)
 
-        Globals.Cam1Dis = GetSetting("Atemswitcher", "Set", "Cam1Dis", False)
-        Globals.Cam2Dis = GetSetting("Atemswitcher", "Set", "Cam2Dis", False)
-        Globals.Cam3Dis = GetSetting("Atemswitcher", "Set", "Cam3Dis", False)
-        Globals.Cam4Dis = GetSetting("Atemswitcher", "Set", "Cam4Dis", False)
-        Globals.Cam5Dis = GetSetting("Atemswitcher", "Set", "Cam5Dis", False)
+        Globals.Cam1Dis = GetSetting("OBS_OP_Remote", "Set", "Cam1Dis", False)
+        Globals.Cam2Dis = GetSetting("OBS_OP_Remote", "Set", "Cam2Dis", False)
+        Globals.Cam3Dis = GetSetting("OBS_OP_Remote", "Set", "Cam3Dis", False)
+        Globals.Cam4Dis = GetSetting("OBS_OP_Remote", "Set", "Cam4Dis", False)
+        Globals.Cam5Dis = GetSetting("OBS_OP_Remote", "Set", "Cam5Dis", False)
 
-        Globals.CamIP(1) = (GetSetting("Atemswitcher", "CamIP", "1", "192.168.1.91"))
-        Globals.CamIP(2) = (GetSetting("Atemswitcher", "CamIP", "2", "192.168.1.92"))
-        Globals.CamIP(3) = (GetSetting("Atemswitcher", "CamIP", "3", "192.168.1.93"))
-        Globals.CamIP(4) = (GetSetting("Atemswitcher", "CamIP", "4", "192.168.1.94"))
-        Globals.CamIP(7) = (GetSetting("Atemswitcher", "CamIP", "5", "192.168.1.95"))
+        Globals.CamIP(1) = (GetSetting("OBS_OP_Remote", "CamIP", "1", "192.168.1.91"))
+        Globals.CamIP(2) = (GetSetting("OBS_OP_Remote", "CamIP", "2", "192.168.1.92"))
+        Globals.CamIP(3) = (GetSetting("OBS_OP_Remote", "CamIP", "3", "192.168.1.93"))
+        Globals.CamIP(4) = (GetSetting("OBS_OP_Remote", "CamIP", "4", "192.168.1.94"))
+        Globals.CamIP(7) = (GetSetting("OBS_OP_Remote", "CamIP", "5", "192.168.1.95"))
 
-        Globals.Cliptime(1) = (GetSetting("Atemswitcher", "Cliptime", "1", "60"))
-        Globals.Cliptime(2) = (GetSetting("Atemswitcher", "Cliptime", "2", "60"))
-        Globals.Cliptime(3) = (GetSetting("Atemswitcher", "Cliptime", "3", "60"))
-        Globals.Cliptime(4) = (GetSetting("Atemswitcher", "Cliptime", "4", "60"))
+        Globals.Cliptime(1) = (GetSetting("OBS_OP_Remote", "Cliptime", "1", "60"))
+        Globals.Cliptime(2) = (GetSetting("OBS_OP_Remote", "Cliptime", "2", "60"))
+        Globals.Cliptime(3) = (GetSetting("OBS_OP_Remote", "Cliptime", "3", "60"))
+        Globals.Cliptime(4) = (GetSetting("OBS_OP_Remote", "Cliptime", "4", "60"))
 
         BtnFast.BackColor = Color.Green
         BtnLiveSlow.BackColor = Color.Green
@@ -644,7 +644,7 @@ Public Class MainForm
         TextFileReader.Dispose()
         'read preset names for cam7. these are stored in the registry as the presets are fixed in the camera
         For i = 0 To 15
-            PresetCaption(16 * 6 + i) = GetSetting("Atemswitcher", "Preset7", i, i + 1)
+            PresetCaption(16 * 6 + i) = GetSetting("OBS_OP_Remote", "Preset7", i, i + 1)
         Next
         UpdatePresets()
     End Sub
@@ -671,9 +671,9 @@ Public Class MainForm
         file.Close()
 
         'also save cam7 legends to registry
-        For i = 0 To 15
-            SaveSetting("Atemswitcher", "Preset7", i, PresetCaption(6 * 16 + i))
-        Next
+        'For i = 0 To 15
+        'SaveSetting("OBS_OP_Remote", "Preset7", i, PresetCaption(6 * 16 + i))
+        'Next
     End Sub
 
     Sub SetDefaultPresets()
@@ -691,7 +691,7 @@ Public Class MainForm
     Public Sub ComportOpen()
         'open com port for camera comms
         'If _serialPort.IsOpen Then _serialPort.Close()
-        '_serialPort.PortName = GetSetting("Atemswitcher", "Comm", "1", "COM1")
+        '_serialPort.PortName = GetSetting("OBS_OP_Remote", "Comm", "1", "COM1")
         '_serialPort.BaudRate = 9600
         '_serialPort.Parity = Parity.None
         '_serialPort.DataBits = 8
@@ -713,7 +713,7 @@ Public Class MainForm
         'open com port for controller comms
         If SerialPort1.IsOpen Then SerialPort1.Close()
         SerialPort1.BaudRate = 9600
-        SerialPort1.PortName = GetSetting("Atemswitcher", "Comm", "2", "COM2")
+        SerialPort1.PortName = GetSetting("OBS_OP_Remote", "Comm", "2", "COM2")
         Try
             SerialPort1.Open()
         Catch
@@ -1019,7 +1019,7 @@ Public Class MainForm
 
     Sub UpdatePresets()
         Dim ad As Integer
-
+        Label2.Text = "Camera Preset Positions (Cam" & ad & ")"
         If PresetLive = False Then ad = addr Else ad = liveaddr
         If ad > 4 And ad <> 7 Then 'for non-cam inputs just show 1-16 legends
             BtnPreset1.Text = "1" : BtnPreset1.BackColor = Color.White
@@ -1490,10 +1490,10 @@ Public Class MainForm
             'websocket.Send("{""request-type"":""SetSourceFilterVisibility"",""sourceName"":""Caption"",""filterName"":""Color Correction"",""filterEnabled"":true,""message-id"":""TEST1""}")
             'websocket.Send("{""request-type"":""SetSourceRender"",""source"":""Caption"",""render"":false,""message-id"":""TEST1""}")
             mediaoverlayactive = False
-            End If
+        End If
 
 
-            If (mediaoverlayactive = True) Then BtnMediaOverlay.BackColor = Color.Red Else BtnMediaOverlay.BackColor = Color.White
+        If (mediaoverlayactive = True) Then BtnMediaOverlay.BackColor = Color.Red Else BtnMediaOverlay.BackColor = Color.White
     End Sub
 
     Private Sub SetCaptionText()
@@ -2021,10 +2021,10 @@ Public Class MainForm
 
 
     Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button5.Click
-        CamIgnore(1) = False
-        CamIgnore(2) = False
-        CamIgnore(3) = False
-        CamIgnore(4) = False
+        If (Globals.Cam1Dis = False) Then CamIgnore(1) = False
+        If (Globals.Cam2Dis = False) Then CamIgnore(2) = False
+        If (Globals.Cam3Dis = False) Then CamIgnore(3) = False
+        If (Globals.Cam4Dis = False) Then CamIgnore(4) = False
         CamCmdPending = False
     End Sub
 
@@ -2514,7 +2514,7 @@ Public Class MainForm
         If startuptimer = 69 Then GroupBox1.Hide()
         If (startuptimer = 5) Then 'open com ports
             Timer1.Enabled = False
-            If GetSetting("Atemswitcher", "Set", "Askprofile", True) = True Then
+            If GetSetting("OBS_OP_Remote", "Set", "Askprofile", True) = True Then
                 Dim fd As OpenFileDialog = New OpenFileDialog()
 
                 fd.Title = "Select presets file"
@@ -2527,7 +2527,7 @@ Public Class MainForm
                 If fd.ShowDialog() = DialogResult.OK Then
                     Globals.PresetFileName = Mid(fd.FileName, InStrRev(fd.FileName, "\") + 1) 'this is the filename without the path
                     Globals.PresetFilePath = Mid(fd.FileName, 1, InStrRev(fd.FileName, "\")) 'this is the filename without the path
-                    SaveSetting("Atemswitcher", "Set", "PresetsFile", Globals.PresetFileName)
+                    SaveSetting("OBS_OP_Remote", "Set", "PresetsFile", Globals.PresetFileName)
                     ReadPresetFile()
                 End If
             End If
@@ -2890,7 +2890,7 @@ Public Class MainForm
         If (ShutDownTimer > 0) Then
             ShutDownTimer = ShutDownTimer + 1
         End If
-        If (ShutDownTimer = 2) And GetSetting("Atemswitcher", "Set", "CamStandby", True) = True Then 'put cams into standby
+        If (ShutDownTimer = 2) And GetSetting("OBS_OP_Remote", "Set", "CamStandby", True) = True Then 'put cams into standby
             Timer1.Enabled = False
             GroupBox1.Show()
             GroupBox1.Left = 100 : GroupBox1.Top = 10

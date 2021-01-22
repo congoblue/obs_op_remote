@@ -8,33 +8,33 @@ Public Class Form2
     End Sub
 
     Private Sub Form2_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
-        SaveSetting("Atemswitcher", "CamIP", "1", TextBox1.Text)
-        SaveSetting("Atemswitcher", "CamIP", "2", TextBox2.Text)
-        SaveSetting("Atemswitcher", "CamIP", "3", TextBox3.Text)
-        SaveSetting("Atemswitcher", "CamIP", "4", TextBox4.Text)
-        SaveSetting("Atemswitcher", "CamIP", "5", TextBox7.Text)
+        SaveSetting("OBS_OP_Remote", "CamIP", "1", TextBox1.Text)
+        SaveSetting("OBS_OP_Remote", "CamIP", "2", TextBox2.Text)
+        SaveSetting("OBS_OP_Remote", "CamIP", "3", TextBox3.Text)
+        SaveSetting("OBS_OP_Remote", "CamIP", "4", TextBox4.Text)
+        SaveSetting("OBS_OP_Remote", "CamIP", "5", TextBox7.Text)
 
-        SaveSetting("Atemswitcher", "Set", "Tally", CheckBoxTally.Checked)
-        SaveSetting("Atemswitcher", "Set", "Autoswap", CheckBoxAutoSwap.Checked)
-        SaveSetting("Atemswitcher", "Set", "CamStandby", CheckBoxStandby.Checked)
-        SaveSetting("Atemswitcher", "Set", "Askprofile", CheckBoxProfile.Checked)
-        SaveSetting("Atemswitcher", "Set", "Caminvert1", CheckBoxInvert1.Checked)
-        SaveSetting("Atemswitcher", "Set", "Caminvert2", CheckBoxInvert2.Checked)
-        SaveSetting("Atemswitcher", "Set", "Caminvert3", CheckBoxInvert3.Checked)
-        SaveSetting("Atemswitcher", "Set", "Caminvert4", CheckBoxInvert4.Checked)
-        SaveSetting("Atemswitcher", "Set", "PresetsFile", TextBox5.Text)
-        SaveSetting("Atemswitcher", "Set", "PresetsPath", TextBox6.Text)
+        SaveSetting("OBS_OP_Remote", "Set", "Tally", CheckBoxTally.Checked)
+        SaveSetting("OBS_OP_Remote", "Set", "Autoswap", CheckBoxAutoSwap.Checked)
+        SaveSetting("OBS_OP_Remote", "Set", "CamStandby", CheckBoxStandby.Checked)
+        SaveSetting("OBS_OP_Remote", "Set", "Askprofile", CheckBoxProfile.Checked)
+        SaveSetting("OBS_OP_Remote", "Set", "Caminvert1", CheckBoxInvert1.Checked)
+        SaveSetting("OBS_OP_Remote", "Set", "Caminvert2", CheckBoxInvert2.Checked)
+        SaveSetting("OBS_OP_Remote", "Set", "Caminvert3", CheckBoxInvert3.Checked)
+        SaveSetting("OBS_OP_Remote", "Set", "Caminvert4", CheckBoxInvert4.Checked)
+        SaveSetting("OBS_OP_Remote", "Set", "PresetsFile", TextBox5.Text)
+        SaveSetting("OBS_OP_Remote", "Set", "PresetsPath", TextBox6.Text)
 
-        SaveSetting("Atemswitcher", "Set", "Cam1Dis", CheckBoxCam1Dis.Checked)
-        SaveSetting("Atemswitcher", "Set", "Cam2Dis", CheckBoxCam2Dis.Checked)
-        SaveSetting("Atemswitcher", "Set", "Cam3Dis", CheckBoxCam3Dis.Checked)
-        SaveSetting("Atemswitcher", "Set", "Cam4Dis", CheckBoxCam4Dis.Checked)
-        SaveSetting("Atemswitcher", "Set", "Cam5Dis", CheckBoxCam5Dis.Checked)
+        SaveSetting("OBS_OP_Remote", "Set", "Cam1Dis", CheckBoxCam1Dis.Checked)
+        SaveSetting("OBS_OP_Remote", "Set", "Cam2Dis", CheckBoxCam2Dis.Checked)
+        SaveSetting("OBS_OP_Remote", "Set", "Cam3Dis", CheckBoxCam3Dis.Checked)
+        SaveSetting("OBS_OP_Remote", "Set", "Cam4Dis", CheckBoxCam4Dis.Checked)
+        SaveSetting("OBS_OP_Remote", "Set", "Cam5Dis", CheckBoxCam5Dis.Checked)
 
-        SaveSetting("Atemswitcher", "Cliptime", "1", TextBox8.Text)
-        SaveSetting("Atemswitcher", "Cliptime", "2", TextBox9.Text)
-        SaveSetting("Atemswitcher", "Cliptime", "3", TextBox10.Text)
-        SaveSetting("Atemswitcher", "Cliptime", "4", TextBox11.Text)
+        SaveSetting("OBS_OP_Remote", "Cliptime", "1", TextBox8.Text)
+        SaveSetting("OBS_OP_Remote", "Cliptime", "2", TextBox9.Text)
+        SaveSetting("OBS_OP_Remote", "Cliptime", "3", TextBox10.Text)
+        SaveSetting("OBS_OP_Remote", "Cliptime", "4", TextBox11.Text)
         Globals.PresetFileName = TextBox5.Text
         Globals.CamIP(1) = TextBox1.Text
         Globals.CamIP(2) = TextBox2.Text
@@ -58,35 +58,35 @@ Public Class Form2
         For Each s In SerialPort.GetPortNames()
             ComboBox2.Items.Add(s)
         Next s
-        TextBox1.Text = (GetSetting("Atemswitcher", "CamIP", "1", "192.168.1.144"))
-        TextBox2.Text = (GetSetting("Atemswitcher", "CamIP", "2", "192.168.1.145"))
-        TextBox3.Text = (GetSetting("Atemswitcher", "CamIP", "3", "192.168.1.146"))
-        TextBox4.Text = (GetSetting("Atemswitcher", "CamIP", "4", "192.168.1.147"))
-        TextBox7.Text = (GetSetting("Atemswitcher", "CamIP", "5", "192.168.1.95"))
+        TextBox1.Text = (GetSetting("OBS_OP_Remote", "CamIP", "1", "192.168.1.144"))
+        TextBox2.Text = (GetSetting("OBS_OP_Remote", "CamIP", "2", "192.168.1.145"))
+        TextBox3.Text = (GetSetting("OBS_OP_Remote", "CamIP", "3", "192.168.1.146"))
+        TextBox4.Text = (GetSetting("OBS_OP_Remote", "CamIP", "4", "192.168.1.147"))
+        TextBox7.Text = (GetSetting("OBS_OP_Remote", "CamIP", "5", "192.168.1.95"))
 
         TextBox5.Text = Globals.PresetFileName
         TextBox6.Text = Globals.PresetFilePath
-        i = ComboBox2.FindString(GetSetting("Atemswitcher", "Comm", "2", "COM2"))
+        i = ComboBox2.FindString(GetSetting("OBS_OP_Remote", "Comm", "2", "COM2"))
         ComboBox2.SelectedIndex = i
         If Globals.TallyMode Then CheckBoxTally.Checked = True
         If Globals.AutoSwap Then CheckBoxAutoSwap.Checked = True
-        If GetSetting("Atemswitcher", "Set", "Askprofile", True) = True Then CheckBoxProfile.Checked = True
-        If GetSetting("Atemswitcher", "Set", "CamStandby", True) = True Then CheckBoxStandby.Checked = True
+        If GetSetting("OBS_OP_Remote", "Set", "Askprofile", True) = True Then CheckBoxProfile.Checked = True
+        If GetSetting("OBS_OP_Remote", "Set", "CamStandby", True) = True Then CheckBoxStandby.Checked = True
 
-        If GetSetting("Atemswitcher", "Set", "Cam1Dis", False) = True Then CheckBoxCam1Dis.Checked = True Else CheckBoxCam1Dis.Checked = False
-        If GetSetting("Atemswitcher", "Set", "Cam2Dis", False) = True Then CheckBoxCam2Dis.Checked = True Else CheckBoxCam2Dis.Checked = False
-        If GetSetting("Atemswitcher", "Set", "Cam3Dis", False) = True Then CheckBoxCam3Dis.Checked = True Else CheckBoxCam3Dis.Checked = False
-        If GetSetting("Atemswitcher", "Set", "Cam4Dis", False) = True Then CheckBoxCam4Dis.Checked = True Else CheckBoxCam4Dis.Checked = False
-        If GetSetting("Atemswitcher", "Set", "Cam5Dis", False) = True Then CheckBoxCam5Dis.Checked = True Else CheckBoxCam5Dis.Checked = False
+        If GetSetting("OBS_OP_Remote", "Set", "Cam1Dis", False) = True Then CheckBoxCam1Dis.Checked = True Else CheckBoxCam1Dis.Checked = False
+        If GetSetting("OBS_OP_Remote", "Set", "Cam2Dis", False) = True Then CheckBoxCam2Dis.Checked = True Else CheckBoxCam2Dis.Checked = False
+        If GetSetting("OBS_OP_Remote", "Set", "Cam3Dis", False) = True Then CheckBoxCam3Dis.Checked = True Else CheckBoxCam3Dis.Checked = False
+        If GetSetting("OBS_OP_Remote", "Set", "Cam4Dis", False) = True Then CheckBoxCam4Dis.Checked = True Else CheckBoxCam4Dis.Checked = False
+        If GetSetting("OBS_OP_Remote", "Set", "Cam5Dis", False) = True Then CheckBoxCam5Dis.Checked = True Else CheckBoxCam5Dis.Checked = False
 
         If Globals.CamInvert(1) Then CheckBoxInvert1.Checked = True
         If Globals.CamInvert(2) Then CheckBoxInvert2.Checked = True
         If Globals.CamInvert(3) Then CheckBoxInvert3.Checked = True
         If Globals.CamInvert(4) Then CheckBoxInvert4.Checked = True
-        TextBox8.Text = (GetSetting("Atemswitcher", "Cliptime", "1", "60"))
-        TextBox9.Text = (GetSetting("Atemswitcher", "Cliptime", "2", "60"))
-        TextBox10.Text = (GetSetting("Atemswitcher", "Cliptime", "3", "60"))
-        TextBox11.Text = (GetSetting("Atemswitcher", "Cliptime", "4", "60"))
+        TextBox8.Text = (GetSetting("OBS_OP_Remote", "Cliptime", "1", "60"))
+        TextBox9.Text = (GetSetting("OBS_OP_Remote", "Cliptime", "2", "60"))
+        TextBox10.Text = (GetSetting("OBS_OP_Remote", "Cliptime", "3", "60"))
+        TextBox11.Text = (GetSetting("OBS_OP_Remote", "Cliptime", "4", "60"))
 
         If Globals.CamStatus(1) = True Then Label8.Text = "FAIL"
         If Globals.CamStatus(2) = True Then Label9.Text = "FAIL"
@@ -101,7 +101,7 @@ Public Class Form2
 
 
     Private Sub ComboBox2_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles ComboBox2.SelectedIndexChanged
-        SaveSetting("Atemswitcher", "Comm", "2", ComboBox2.SelectedItem)
+        SaveSetting("OBS_OP_Remote", "Comm", "2", ComboBox2.SelectedItem)
     End Sub
 
     Private Sub CheckBoxAutoSwap_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles CheckBoxAutoSwap.CheckedChanged
