@@ -1019,8 +1019,8 @@ Public Class MainForm
 
     Sub UpdatePresets()
         Dim ad As Integer
-        Label2.Text = "Camera Preset Positions (Cam" & ad & ")"
         If PresetLive = False Then ad = addr Else ad = liveaddr
+        Label2.Text = "Camera Preset Positions (Cam" & ad & ")"
         If ad > 4 And ad <> 7 Then 'for non-cam inputs just show 1-16 legends
             BtnPreset1.Text = "1" : BtnPreset1.BackColor = Color.White
             BtnPreset2.Text = "2" : BtnPreset2.BackColor = Color.White
