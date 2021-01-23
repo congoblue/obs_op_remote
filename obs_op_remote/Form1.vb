@@ -443,7 +443,7 @@ Public Class MainForm
             If e.KeyCode = Keys.X Then BtnTransition_Click(Nothing, Nothing)
             If e.KeyCode = Keys.C Then BtnCut_Click(Nothing, Nothing)
             If e.KeyCode = 17 Or e.KeyCode = Keys.O Then BtnOverlay_Click(Nothing, Nothing)
-            If e.KeyCode = 67 Or e.KeyCode = Keys.C Then BtnMediaOverlay_Click(Nothing, Nothing)
+            If e.KeyCode = 67 Or e.KeyCode = Keys.Z Then BtnMediaOverlay_Click(Nothing, Nothing)
             If e.KeyCode = 100 Then 'left cursor (numeric keypad only)
                 If e.Modifiers = Keys.Control Then op = "PTS2050" Else op = "PTS4050"
                 If kc <> 37 Then SendCamCmd(op)
